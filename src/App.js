@@ -45,9 +45,6 @@ function App() {
 
     wordLetters = wordLetters.map((l) => l.toLowerCase());
 
-    console.log(wordLetters);
-    console.log({ word, category });
-
     setPickedWord(word);
     setPickedCategory(category);
     setLetters(wordLetters);
