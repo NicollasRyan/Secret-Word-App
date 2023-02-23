@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import { StartScreen } from "./components/StartScreen";
 import { Game } from "./components/Game";
-import { End } from "./components/End";
+import { GameOver } from "./components/GameOver";
 import { wordsLits } from "./data/words";
 
 import "./App.css";
@@ -23,7 +23,7 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
   const [guesses, setGuesses] = useState(3);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(50);
 
   const pickedWordAndCategory = () => {
     const categories = Object.keys(words);
@@ -111,7 +111,7 @@ function App() {
           score={score}
         />
       )}
-      {gameStage === "end" && <End retry={retry} />}
+      {gameStage === "end" && <GameOver retry={retry} score={score} />}
     </div>
   );
 }
